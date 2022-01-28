@@ -1,0 +1,43 @@
+#8
+def func_a(number1, number2):  #차이
+    ret = 0
+    if number1 > number2:
+        ret = number1 - number2
+    else:
+        ret = number2 - number1
+    return ret
+
+def func_b(number):  #자리수 구하기
+    ret = 0
+    while number != 0:
+        number = number // 10
+        ret += 1
+    return ret
+
+def func_c(number, digit):  #뒤집기
+    ret = 0
+    for i in range(digit):
+        temp = number % 10
+        number = number // 10
+        ret = ret * 10 + temp
+    return ret
+
+def solution8(number):
+    answer = 0
+    digit = func_b(number)
+    convert_number = func_c(number, digit)
+    answer = func_a(number, convert_number)
+    return answer
+
+#아래는 테스트케이스 출력을 해보기 위한 코드입니다.
+number1 = 120
+ret1 = solution8(number1)
+
+#[실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+print("8solution 함수의 반환 값은", ret1, "입니다.")
+
+number2 = 23
+ret2 = solution8(number2)
+
+#[실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+print("solution 함수의 반환 깂은", ret2, "입니다.")
